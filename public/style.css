@@ -1,0 +1,484 @@
+
+nav a:active {
+  border-bottom:solid white 3px;
+}
+
+#buttonHeader svg{
+  width: 75px;
+  float: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#messageHeader {
+  float: left;
+  width: 550px;
+  padding-left: 20px;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+#messageHeader h1{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 25px;
+  color: #fff;
+}
+
+#headerLevel {
+  position: absolute;
+  margin-left: 77px;
+  margin-top: 60px;
+  color: #fff;
+}
+
+#messageHeader p {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 34px;
+}
+
+body {
+  line-height: 1.8em;
+  font-family: 'Crete Round', serif;
+  /*background-color: #0A131C;*/
+  margin: 0px;
+}
+
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+  font-family: 'Crete Round',"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#outerCard {
+  margin-top: -60px;
+}
+
+.card-image {
+  border: 7px solid #4286f4;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  width: 156px;
+  height: 155px;
+}
+
+#content {
+  margin: 20px 40px 40px 40px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+/*.boxName {
+  font-size: 20px;
+}*/
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  /*background: #ebedf2;*/
+  border: 1px solid #333;
+  h1 {
+		font-weight: bold;
+		margin: 20px;
+		color: #666;
+		font-size: 1.5em;
+  }
+}
+
+#moreSlots {
+  padding-left: 100px;
+  float: left;
+
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  margin: 20px auto 0 auto;
+  padding-top: 55px;
+  padding-left: 19px;
+}
+
+/* The initial pile of unsorted cards */
+
+#cardPile, #moreSlots {
+  margin: 0 auto;
+  padding-top: 31px;
+  padding-left: 12px;
+}
+
+#cardSlots, #cardPile, #moreSlots{
+  width: 980px;
+  height: 217px;
+
+
+}
+
+/* Individual cards and slots */
+
+#cardSlots div, #cardPile div, #moreSlots div {
+  float: left;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border: none;
+  padding-top: 1px;
+  font-size: 20px;
+  background: none;
+  color: white;
+  width: 155px;
+  height: 190px;
+}
+
+.box {
+  padding-top: 12px;
+}
+
+.gamePic {
+  border: 5px solid #BF1B2F;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+
+#cardPile div, #moreSlots div {
+  background: none;
+  border: none;
+  width: 157px;
+  height: 143px;
+  /*color: #fff;*/
+  /*font-size: 50px;*/
+  /*text-shadow: 0 0 3px #000;*/
+}
+
+#cardPile div.ui-draggable-dragging {
+  /*-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);*/
+}
+
+
+
+
+#successTop {
+  background-color: #395894;
+  /*84152d;*/
+  height: 27px;
+  padding: 20px;
+  margin-top: auto;
+  width: 382px;
+  margin-left: -20px;
+  margin-bottom: -64px;
+  margin-top: -20px;
+  border-radius: 10px;
+}
+
+
+#successMessage {
+  position: absolute;
+  left: 500px;
+  top: 200px;
+
+  width: 382px;
+  height: 320px;
+  z-index: 100;
+  background: #ffffff;
+  /*border: 2px solid;*/
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+  font-family: 'Crete Round', serif;
+}
+
+#successMessage h1 {
+  background-color: #6099f4;
+  /*bf1b2f;*/
+  color: #fff;
+  padding: 20px;
+  margin-top: auto;
+  width: 382px;
+  margin-left: -20px;
+}
+
+#success {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+}
+
+#checkButton {
+  margin-right: 12%; /*215px*/
+  margin-top: 96px;
+  /*93px;*/
+  float: right;
+  width: 198px;
+  height: 57px;
+  background-color: #395894;
+  /*#83172e;*/
+  border: none;
+  border-radius: 10px;
+  font-family: 'Crete Round', serif;
+  font-size: 20px;
+  color: white;
+}
+
+#checkButton:hover {
+  background-color: #466CB5;
+  /*f7b487;*/
+  /*#971c36;*/
+}
+
+#checkImage {
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 10px;
+  float: left;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#playAgainButton:hover, #nameGoButton:hover {
+  background-color: #466CB5;
+}
+
+
+#playAgainButton, #nameGoButton {
+  background-color: #6099f4;
+  /*bf1b2f;*/
+  border: none;
+  border-radius: 10px;
+  width: 212px;
+  height: 52px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-top: 0px;
+  font-family: 'Crete Round', serif;
+  font-size: 25px;
+  color: white;
+}
+
+#rightArrow {
+  width: 35px;
+  height: 30px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-right: 20px;
+  float: right;
+}
+
+#xImage {
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 15px;
+  float: left;
+}
+
+#quitGameButton:hover, #nameCancelButton:hover {
+  border: 2px solid #6099f4;
+
+}
+
+
+
+#quitGameButton, #nameCancelButton {
+  background-color: #fff;
+  border: 2px solid #395894;
+  /*84152d;*/
+  border-radius: 10px;
+  width: 174px;
+  height: 44px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-top: 0px;
+  font-family: 'Crete Round', serif;
+  font-size: 20px;
+  color: #395894;
+  /*84152d;*/
+  margin-left: -48px;
+}
+
+#quitGameButton p, #nameCancelButton p {
+  margin: auto;
+  padding-top: 7px;
+  padding-left: 4px;
+  float: right; 
+}
+
+#quitGameButton p:hover, #nameCancelButton p:hover {
+  color: #395894;
+}
+
+.topFooter {
+  padding: 0;
+  margin: auto;
+  float: inherit;
+  width: 100%;
+  height: 10px;
+  background-color: #395894;
+  /*#83172e;*/
+
+}
+
+
+
+.bottomFooter {
+  padding: 0;
+  margin: 0 0 0px 0;
+  float: inherit;
+  width: 100%;
+  height: 90px;
+  background-color: #6099f4;
+  /*bd1e33;*/
+}
+.st0{fill:#395894;
+  /*C1C1C1*/
+  ;} /*outline */
+.st1{fill:#FFFFFF;} /* box fill */
+.st2{fill: #395894;
+  /*#84152D*/
+  ;} /*banner outline*/
+.st3{fill:#6099f4;
+  /*#BF1B2F*/
+  ;} /*banner fill */
+
+.st4{fill:#395894;
+  /*#84152D*/
+  ;} /* back button Boarder */
+.st5{fill: #6099f4;
+  /*#BF1B2F*/
+  ;} /* Back button Inside */
+.st6{fill:#FFFFFF;} /* back button Arrow */
+
+.st7{
+  fill:#395894;
+  /*84152D; */
+  /*x model quit*/
+}
+
+
+.st5:hover{fill:#395894;
+  /*#84152D*/
+  ;}
+
+
+  .bottomFooter p {
+    color: #fff;
+    float: left;
+    margin-left: 90px;
+    padding-top: 15px;
+    align: center;
+  }
+
+
+/*Multiplayer Game*/
+
+
+  #nameInput {
+    font-size: 24px;
+    font-family: 'Crete Round', serif;
+
+  }
+
+  #nameTop {
+    background-color: #395894;
+    /*84152d;*/
+    height: 27px;
+    padding: 20px;
+    margin-top: auto;
+    width: 382px;
+    margin-left: -20px;
+    margin-bottom: -64px;
+    margin-top: -20px;
+    border-radius: 10px;
+  }
+
+
+  #nameMessage {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+
+    width: 382px;
+    height: 375px;
+    z-index: 100;
+    background: #ffffff;
+    /*border: 2px solid;*/
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    padding: 20px;
+    font-family: 'Crete Round', serif;
+  }
+
+  #nameMessage h1 {
+    background-color: #6099f4;
+    /*bf1b2f;*/
+    color: #fff;
+    padding: 20px;
+    margin-top: auto;
+    width: 382px;
+    margin-left: -20px;
+  }
+
+  #nameModel {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    text-align: center;
+  }
+
+  #thePlayers ul {
+    color: #fff;
+    float: right;
+    list-style-type: none;
+  }

@@ -1,0 +1,1527 @@
+<!doctype html>
+<html lang="en">
+	<head ng-app="mimicMe">
+		<title>Matching Game</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="cards.css">
+		<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		
+		<script src="app.js"></script>
+		<link rel="shortcut icon" href="../images/assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../images/assets/favicon.ico" type="image/x-icon">
+		<meta name="google" value="notranslate">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-97654083-1', 'auto');
+		  ga('send', 'pageview');
+
+	</script>
+	</head>
+	<body ng-controller="MainController">
+
+	<div id="homePages">
+		<div id="topbar">
+			<img id="logo" src="../images/assets/logo.png" />
+			<h1>Español</h1>
+			<nav>
+				<a href="" id="animalNav">Animals</a>
+				<!-- onclick="hideAllButThis(event, 'animalSubject', 'animalNav')" -->
+				<a href="" id="foodNav" >Food</a>
+				<!-- onclick="hideAllButThis(event, 'foodSubject', 'foodNav')" -->
+				<a href="" id="schoolNav">School</a>
+				<!-- onclick="hideAllButThis(event, 'schoolSubject','schoolNav')" -->
+				<a href="" id="spaceNav">Science</a>
+
+				<a href="" id="multiNav">Multiplayer</a>
+				<!-- onclick="hideAllButThis(event, 'spaceSubject', 'spaceNav')" -->
+				<a href="" id="printNav">Flash Cards</a>
+			</nav>
+
+		</div>
+
+		<div id="animalSubject">
+
+
+			<div id="topinfo">
+				<h5>Let's review</h5>
+				<p>Review the words below before starting the game.
+					<!-- <br> You can even <a id="words1" href="../images/pdf/animals.pdf" download>download printable flashcards.</a><br><a id="words" href="printing.html">Instructions for printing.</a></p> -->
+				<a href="game.html"><div id="animalsStartGame">Start Game</div></a>
+			</div>
+			<table>
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/bear.png" />
+							<figcaption>el oso<br><div class="en">Bear</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/beaver.png" />
+							<figcaption>el castor<br><div class="en">Beaver</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/bird.png" />
+							<figcaption>el pájaro<br><div class="en">Bird</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/cat.png" />
+							<figcaption>el gato<br><div class="en">Cat</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/chicken.png" />
+							<figcaption>el pollo<br><div class="en">Chicken</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/cow.png" />
+							<figcaption>la vaca<br><div class="en">Cow</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/crab.png" />
+							<figcaption>el cangrejo<br><div class="en">Crab</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/deer.png" />
+							<figcaption>el venado<br><div class="en">Deer</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/dog.png" />
+							<figcaption>el perro<br><div class="en">Dog</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/donkey.png" />
+							<figcaption>el burro<br><div class="en">Donkey</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/elephant.png" />
+							<figcaption>el elefante<br><div class="en">Elephant</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/fish.png" />
+							<figcaption>el pez<br><div class="en">Fish</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/fox.png" />
+							<figcaption>el zorro<br><div class="en">Fox</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/frog.png" />
+							<figcaption>la rana<br><div class="en">Frog</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/giraffe.png" />
+							<figcaption>la jirafa<br><div class="en">Giraffe</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/jellyfish.png" />
+							<figcaption>la medusa<br><div class="en">Jellyfish</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/leopard.png" />
+							<figcaption>el leopardo<br><div class="en">Leopard</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/lion.png" />
+							<figcaption>el león<br><div class="en">Lion</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/monkey.png" />
+							<figcaption>el mono<br><div class="en">Monkey</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/mouse.png" />
+							<figcaption>el ratón<br><div class="en">Mouse</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/octopus.png" />
+							<figcaption>el pulpo<br><div class="en">Octopus</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/owl.png" />
+							<figcaption>el búho<br><div class="en">Owl</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/panda.png" />
+							<figcaption>el panda<br><div class="en">Panda</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/penguin.png" />
+							<figcaption>el pingüino<br><div class="en">Penguin</div></figcaption>
+						</figure>
+					</td>
+
+
+					<td>
+						<figure>
+							<img src="../images/animals/pig.png" />
+							<figcaption>el chancho<br><div class="en">Pig</div></figcaption>
+						</figure>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/rabbit.png" />
+							<figcaption>el conejo<br><div class="en">Rabbit</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/raccoon.png" />
+							<figcaption>el mapache<br><div class="en">Raccoon</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/seahorse.png" />
+							<figcaption>el caballo<br><div class="en">Seahorse</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/seal.png" />
+							<figcaption>la foca<br><div class="en">Seal</div></figcaption>
+						</figure>
+					</td>
+
+
+					<td>
+						<figure>
+							<img src="../images/animals/shark.png" />
+							<figcaption>el tiburón<br><div class="en">Shark</div></figcaption>
+						</figure>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/sheep.png" />
+							<figcaption>la oveja<br><div class="en">Sheep</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/snake.png" />
+							<figcaption>el serpiente<br><div class="en">Snake</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/squirrel.png" />
+							<figcaption>la ardilla<br><div class="en">Squirrel</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/starfish.png" />
+							<figcaption>la estrella de mar<br><div class="en">Starfish</div></figcaption>
+						</figure>
+					</td>
+
+
+					<td>
+						<figure>
+							<img src="../images/animals/tiger.png" />
+							<figcaption>el tigre<br><div class="en">Tiger</div></figcaption>
+						</figure>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/animals/turtle.png" />
+							<figcaption>la tortuga<br><div class="en">Turtle</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/walrus.png" />
+							<figcaption>la morsa<br><div class="en">Walrus</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/whale.png" />
+							<figcaption>la ballena<br><div class="en">Whale</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/animals/wolf.png" />
+							<figcaption>el lobo<br><div class="en">Wolf</div></figcaption>
+						</figure>
+					</td>
+
+
+					<td>
+						<figure>
+							<img src="../images/animals/zebra.png" />
+							<figcaption>la cebra<br><div class="en">Zebra</div></figcaption>
+						</figure>
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+
+		<div id="schoolSubject">
+
+
+
+			<div id="topinfo">
+
+				<h5>Let's review</h5>
+				<p>Review the words below before starting the game.
+					<!-- <br> You can even <a id="words1" href="../images/pdf/school.pdf" download>download printable flashcards.</a><br><a id="words" href="printing.html">Instructions for printing.</a></p> -->
+
+
+				<a href="game.html"><div id="schoolStartGame">Start Game</div></a>
+
+			</div>
+
+			<table>
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/school/backpack.png" />
+							<figcaption>la mochila<br><div class="en">Backpack</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/basketball.png" />
+							<figcaption>el baloncesto<br><div class="en">Basketball</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/book.png" />
+							<figcaption>el libro<br><div class="en">Book</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/calculator.png" />
+							<figcaption>la calculadora<br><div class="en">Calculator</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/calender.png" />
+							<figcaption>el calendario<br><div class="en">Calender</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/school/whiteboard.png" />
+							<figcaption>la pizarra blanca<br><div class="en">Whiteboard</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/clock.png" />
+							<figcaption>el reloj<br><div class="en">Clock</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/coloredPencils.png" />
+							<figcaption>los làpices de colores<br><div class="en">Colored Pencils</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/colors.png" />
+							<figcaption>los colores<br><div class="en">Colors</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/computer.png" />
+							<figcaption>la computadora<br><div class="en">Computer</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/school/crayons.png" />
+							<figcaption>los crayones<br><div class="en">Crayons</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/desk.png" />
+							<figcaption>el escritorio<br><div class="en">Desk</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/eraser.png" />
+							<figcaption>la goma<br><div class="en">Eraser</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/football.png" />
+							<figcaption>el fútbol<br><div class="en">Football</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/glasses.png" />
+							<figcaption>los lentes<br><div class="en">glasses</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/school/globe.png" />
+							<figcaption>el globo<br><div class="en">Globe</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/glue.png" />
+							<figcaption>el pegamento<br><div class="en">Glue</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/headphones.png" />
+							<figcaption>los audífonos<br><div class="en">Headphones</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/jumprope.png" />
+							<figcaption>la cuerda de salto<br><div class="en">Jump Rope</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/kids.png" />
+							<figcaption>los niños<br><div class="en">Children</div></figcaption>
+						</figure>
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td>
+						<figure>
+							<img src="../images/school/lunch.png" />
+							<figcaption>el almuerzo<br><div class="en">Lunch</div></figcaption>
+						</figure>
+					</td>
+					<td>
+
+						<figure>
+							<img src="../images/school/magnifyingGlass.png" />
+							<figcaption>la lupa<br><div class="en">Magnifying Glass</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/markers.png" />
+							<figcaption>los marcadores<br><div class="en">Markers</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/notebook.png" />
+							<figcaption>el cuaderno<br><div class="en">Notebook</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/paint.png" />
+							<figcaption>la pintura<br><div class="en">Paint</div></figcaption>
+						</figure>
+					</td>
+
+
+				</tr>
+
+					<tr>
+					<td>
+						<figure>
+							<img src="../images/school/paper.png" />
+							<figcaption>el papel<br><div class="en">Paper</div></figcaption>
+						</figure>
+					</td>
+					<td>
+
+						<figure>
+							<img src="../images/school/paperclips.png" />
+							<figcaption>el clip<br><div class="en">Paperclips</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/pen.png" />
+							<figcaption>el bolígrafo<br><div class="en">Pen</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/pencil.png" />
+							<figcaption>el lápiz<br><div class="en">Pencil</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/pencilSharpener.png" />
+							<figcaption>los sacapunta<br><div class="en">Pencil Sharpener</div></figcaption>
+						</figure>
+					</td>
+
+
+				</tr>
+
+					<tr>
+
+					<td>
+						<figure>
+							<img src="../images/school/playground.png" />
+							<figcaption>el patio de recreo<br><div class="en">Playground</div></figcaption>
+						</figure>
+					</td>
+					<td>
+
+						<figure>
+							<img src="../images/school/ruler.png" />
+							<figcaption>la regla<br><div class="en">Ruler</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/school_bus.png" />
+							<figcaption>el autobús escolar<br><div class="en">School Bus</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/school.png" />
+							<figcaption>la escuela<br><div class="en">School</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/scissors.png" />
+							<figcaption>las tijeras<br><div class="en">Scissors</div></figcaption>
+						</figure>
+					</td>
+
+
+				</tr>
+
+					<tr>
+					<td>
+						<figure>
+							<img src="../images/school/shapes.png" />
+							<figcaption>las figuras<br><div class="en">Shapes</div></figcaption>
+						</figure>
+					</td>
+					<td>
+
+						<figure>
+							<img src="../images/school/stapler.png" />
+							<figcaption>la corchetera<br><div class="en">Stapler</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/tape.png" />
+							<figcaption>la cinta<br><div class="en">Tape</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/teacher.png" />
+							<figcaption>la maestra<br><div class="en">Teacher</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/school/watch.png" />
+							<figcaption>el reloj<br><div class="en">Watch</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="spaceSubject">
+
+
+			<div id="topinfo">
+
+			<h5>Let's review</h5>
+			<p>Review the words below before starting the game.
+				<!-- <br> You can even <a id="words1" href="../images/pdf/earth-space.pdf" download>download printable flashcards.</a><br><a id="words" href="printing.html">Instructions for printing.</a></p> -->
+
+
+			<a href="game.html"><div id="spaceStartGame" >Start Game</div></a>
+
+			</div>
+
+			<table>
+				<tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/acorn.png" />
+									 <figcaption>la bellota<br><div class="en">Acorn</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/alien.png" />
+									 <figcaption>el extraterrestre<br><div class="en">Alien</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/ants.png" />
+									 <figcaption>las hormigas<br><div class="en">Ants</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/astronaut.png" />
+									 <figcaption>el astronauta<br><div class="en">Astronaut</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/bee.png" />
+									 <figcaption>la abeja<br><div class="en">Bee</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/butterfly.png" />
+									 <figcaption>la mariposa<br><div class="en">Butterfly</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/cactus.png" />
+									 <figcaption>el cacto<br><div class="en">Cactus</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/caterpillar.png" />
+									 <figcaption>la oruga<br><div class="en">Caterpillar</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/clouds.png" />
+									 <figcaption>las nubes<br><div class="en">Clouds</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/comet.png" />
+									 <figcaption>el cometa<br><div class="en">Comet</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/dirt.png" />
+									 <figcaption>el polvo<br><div class="en">Dirt</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/earth.png" />
+									 <figcaption>la tierra<br><div class="en">Earth</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/fire.png" />
+									 <figcaption>el fuego<br><div class="en">Fire</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/flower.png" />
+									 <figcaption>la flor<br><div class="en">Flower</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/grass.png" />
+									 <figcaption>el césped<br><div class="en">Grass</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/island.png" />
+									 <figcaption>la isla<br><div class="en">Island</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/leaf.png" />
+									 <figcaption>la hoga<br><div class="en">Leaf</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/lizard.png" />
+									 <figcaption>la lagartija<br><div class="en">Lizard</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/mountain.png" />
+									 <figcaption>la montaña<br><div class="en">Mountain</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/nest.png" />
+									 <figcaption>el nido<br><div class="en">Nest</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/pawprints.png" />
+									 <figcaption>las heullas<br><div class="en">Paw Prints</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/pinecone.png" />
+									 <figcaption>la piña<br><div class="en">Pinecone</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/planet.png" />
+									 <figcaption>el planeta<br><div class="en">Planet</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/plant.png" />
+									 <figcaption>la planta<br><div class="en">Plant</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/rain.png" />
+									 <figcaption>la lluvia<br><div class="en">Rain</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/river.png" />
+									 <figcaption>el rio<br><div class="en">River</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/rock.png" />
+									 <figcaption>la roca<br><div class="en">Rock</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/rocket.png" />
+									 <figcaption>el cohete<br><div class="en">Rocket</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/satellite.png" />
+									 <figcaption>el satélite<br><div class="en">Satellite</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/snail.png" />
+									 <figcaption>el caracol<br><div class="en">Snail</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/snow.png" />
+									 <figcaption>la nieve<br><div class="en">Snow</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/spider.png" />
+									 <figcaption>la araña<br><div class="en">Spider</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/star.png" />
+									 <figcaption>la estrella<br><div class="en">Star</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/stick.png" />
+									 <figcaption>el palo<br><div class="en">Stick</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/sun.png" />
+									 <figcaption>el sol<br><div class="en">Sun</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+			 <tr>
+					 <td>
+
+							 <figure>
+									 <img src="../images/space/tree.png" />
+									 <figcaption>el árbol<br><div class="en">Tree</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/ufo.png" />
+									 <figcaption>el OVNI<br><div class="en">UFO</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/volcano.png" />
+									 <figcaption>el volcán<br><div class="en">Volcano</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/wind.png" />
+									 <figcaption>el viento<br><div class="en">Wind</div></figcaption>
+							 </figure>
+					 </td>
+					 <td>
+							 <figure>
+									 <img src="../images/space/worm.png" />
+									 <figcaption>el gusano<br><div class="en">Worm</div></figcaption>
+							 </figure>
+					 </td>
+			 </tr>
+
+			</table>
+		</div>
+
+
+		<div id="foodSubject">
+
+
+			<div id="topinfo">
+
+				<h5>Let's review</h5>
+				<p>Review the words below before starting the game.
+					<!-- <br> You can even <a id="words1" href="../images/pdf/food.pdf" download>download printable flashcards.</a><br><a href="" id="words" >Instructions for printing.</a></p> -->
+
+
+				<a href="game.html"><div id="foodStartGame">Start Game</div></a>
+
+			</div>
+
+			<table>
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/apple.png" />
+							<figcaption>la manzana<br><div class="en">Apple</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/banana.png" />
+							<figcaption>el plátano<br><div class="en">Banana</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/blueberries.png" />
+							<figcaption>los arándanos<br><div class="en">Blueberries</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/bread.png" />
+							<figcaption>el pan<br><div class="en">Bread</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/broccoli.png" />
+							<figcaption>el brócoli<br><div class="en">Broccoli</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/carrot.png" />
+							<figcaption>la zanahoria<br><div class="en">Carrot</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/cheese.png" />
+							<figcaption>el queso<br><div class="en">Cheese</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/cherries.png" />
+							<figcaption>las guindas<br><div class="en">Cherries</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/chicken.png" />
+							<figcaption>el pollo<br><div class="en">Chicken</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/chips.png" />
+							<figcaption>las papas fritas<br><div class="en">Chips</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/cookies.png" />
+							<figcaption>galletas<br><div class="en">Cookies</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/cucumber.png" />
+							<figcaption>el pepino<br><div class="en">Cucumber</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/cupcake.png" />
+							<figcaption>la magdalena<br><div class="en">Cupcake</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/donut.png" />
+							<figcaption>la rosquilla<br><div class="en">Donut</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/egg.png" />
+							<figcaption>el huevo<br><div class="en">Egg</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/frenchFries.png" />
+							<figcaption>las papas fritas<br><div class="en">French Fries</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/grapes.png" />
+							<figcaption>las uvas<br><div class="en">Grapes</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/hamburger.png" />
+							<figcaption>la hamburguesa<br><div class="en">Hamburger</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/hotdog.png" />
+							<figcaption>el completo<br><div class="en">Hotdog</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/icecream.png" />
+							<figcaption>el helado<br><div class="en">Icecream</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/lemon.png" />
+							<figcaption>el limón<br><div class="en">Lemon</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/lettuce.png" />
+							<figcaption>la lechuga<br><div class="en">Lettuce</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/lime.png" />
+							<figcaption>la lima<br><div class="en">Lime</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/mushroom.png" />
+							<figcaption>el champiñón<br><div class="en">Mushroom</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/onion.png" />
+							<figcaption>la cebolla<br><div class="en">Onion</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/orange.png" />
+							<figcaption>la naranja<br><div class="en">Orange</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/pancakes.png" />
+							<figcaption>los panqueques<br><div class="en">Pancakes</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/pear.png" />
+							<figcaption>la pera<br><div class="en">Pear</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/peas.png" />
+							<figcaption>las arvejas<br><div class="en">Peas</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/pepper.png" />
+							<figcaption>la pimienta<br><div class="en">Pepper</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/pie.png" />
+							<figcaption>el pastel<br><div class="en">Pie</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/pizza.png" />
+							<figcaption>la pizza<br><div class="en">Pizza</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/plum.png" />
+							<figcaption>la ciruela<br><div class="en">Plum</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/popcorn.png" />
+							<figcaption>las cabritas<br><div class="en">Popcorn</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/potato.png" />
+							<figcaption>la papa<br><div class="en">Potato</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+					<tr>
+					<td>
+
+						<figure>
+							<img src="../images/food/pumpkin.png" />
+							<figcaption>la calabaza<br><div class="en">Pumpkin</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/raspberry.png" />
+							<figcaption>la frambuesa<br><div class="en">Raspberry</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/strawberry.png" />
+							<figcaption>la frutilla<br><div class="en">Strawberry</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/taco.png" />
+							<figcaption>el taco<br><div class="en">Taco</div></figcaption>
+						</figure>
+					</td>
+
+					<td>
+						<figure>
+							<img src="../images/food/watermelon.png" />
+							<figcaption>la sandía<br><div class="en">Watermelon</div></figcaption>
+						</figure>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+
+	<div id="printInt">
+
+		<!-- <div id="topinfo"> -->
+			<h4>Click Image to Download Flash Cards</h4>
+				<div id="printTable">
+
+			<!-- <a id="words1" href="../images/pdf/animals.pdf" download> -->
+					<table>
+						<tr>
+						<td>
+							<a href="../images/pdf/animals.pdf" target="_blank"><img src="../images/assets/animals.png" /></a>
+						</td>
+
+						<td id="foodCards">
+							<a href="../images/pdf/food.pdf" target="_blank"><img src="../images/assets/food.png" /></a>
+
+						</td>
+
+						<td id="schoolCards">
+							<a href="../images/pdf/school.pdf" target="_blank"><img src="../images/assets/school.png" /></a>
+						</td>
+
+						<td id="scienceCards">
+							<a href="../images/pdf/science.pdf" target="_blank"><img src="../images/assets/science.png" /></a>
+
+						</td>
+
+					</tr>
+
+				</table>
+			</div>
+
+			<div id="printing">
+
+			<h5>Printing Instructions</h5>
+			</div>
+				<h6>Click one of the images above to download the flash cards for that topic.</h6>
+				<h6>Print on both sides of a piece of paper (Duplex Printing)</h6>
+
+				<h4>Find out if your printer supports duplex printing</h4>
+
+				<h6> 1. Click <b>File > Print.</b><br>2. In the <b>Printer</b> list, select the printer you want to use, then click <b>Printer Properties.</b><br>3. If you see options for "duplex printing," "print on both sides," or something similiar, your printer supports duplex printing.</h6>
+
+				<h4>Print using duplex support</h4>
+
+				<h6> 1. Click <b>File > Print.</b><br>2. In the <b>Printer</b> list, select the printer you want to use<br>3. In Settings, choose "Print on Both Sides - Flip sheets on short edge".</h6>
+
+				<h4>Print on a printer that does not support duplex printing</h4>
+
+				<h6> 1. Click <b>File > Print.</b><br>2. In the <b>Printer</b> list, select the printer you want to use<br>3. Print the first page by typing 1 in the "Pages" box, then click "Print".<br>4. When the first side is printed, flip the sheet over, then reinsert it into the printer. Print the other side by typing 2 into the "Pages" box.</h6>
+
+
+
+
+		<!-- </div> -->
+	</div>
+</div>
+
+	<div id="multiGame">
+		<table id="multiGameTable">
+			<tr>
+				<td>
+					<div id="animalsMultiStartGame"><a href="game.html">Animal Game</a></div>
+				</td>
+				<td>
+					<div id="foodMultiStartGame"><a href="game.html">Food Game</a></div>
+				</td>
+				<td>
+					<div id="schoolMultiStartGame"><a href="game.html">School Game</a></div>
+				</td>
+				<td>
+					<div id="spaceMultiStartGame"><a href="game.html">Science Game</a></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="nameModel">
+				<div id="nameMessage">
+					<div id="nameTop"></div>
+			    <h1 id="nameHeader">{{ test }}</h1>
+					<h2 id="successDes">This is the name your opponents will see.</h2>
+
+					<input id="nameInput" type="text" ng-model="name">
+			    <!-- <a href=""> -->
+				<button id="nameGoButton" ng-click="newPlayer()" >Go<img src="../images/assets/modelRightArrow.png" id="rightArrow" alt="Right Arrow"></button>
+			<!-- </a> -->
+
+					<a href=""><button id="nameCancelButton"><?xml version="1.0" encoding="utf-8"?>
+						<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 25.4 25.4" style="width: 30px;  margin-top: 4px;" xml:space="preserve">
+						<g id="Layer_2">
+							<g id="Layer_1-2">
+								<path class="st7" d="M1.2,2.1l0.9-0.9c1.6-1.6,4.2-1.6,5.8,0l16.3,16.3c1.6,1.6,1.6,4.2,0,5.8l-0.9,0.9c-1.6,1.6-4.2,1.6-5.8,0
+									L1.2,7.9C-0.4,6.3-0.4,3.7,1.2,2.1z"/>
+								<path class="st7" d="M1.2,17.5L17.5,1.2c1.6-1.6,4.2-1.6,5.8,0l0.9,0.9c1.6,1.6,1.6,4.2,0,5.8L7.9,24.2c-1.6,1.6-4.2,1.6-5.8,0
+									l-0.9-0.9C-0.4,21.7-0.4,19.1,1.2,17.5z"/>
+							</g>
+						</g>
+						</svg>
+						<p>Cancel</p></button></a>
+				</div>
+
+	</div>
+
+
+		<div id="theGame">
+			<header>
+				<a href="" id="buttonHeader">
+
+					<?xml version="1.0" encoding="utf-8"?>
+					<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+					<g id="Layer_2">
+						<g id="Layer_1-2">
+							<circle class="st4" cx="32" cy="32" r="32"/>
+							<circle class="st5" cx="32" cy="32" r="28.1"/>
+							<path class="st6" d="M30.6,25.7h15.7c2.9,0,5.3,2.4,5.3,5.3v2.3c0,2.9-2.4,5.3-5.3,5.3H30.6c-2.9,0-5.3-2.4-5.3-5.3v-2.3
+								C25.3,28,27.6,25.7,30.6,25.7z"/>
+							<path class="st6" d="M13.6,34.1l17.1,11.6c1.1,0.8,2.7,0.5,3.5-0.6c0.3-0.4,0.5-1,0.5-1.5V20.5c0-1.4-1.1-2.5-2.5-2.6
+								c-0.5,0-1,0.2-1.5,0.5L13.6,29.9c-1.2,0.8-1.5,2.4-0.7,3.5C13.1,33.7,13.4,33.9,13.6,34.1z"/>
+						</g>
+					</g>
+					</svg>
+
+				</a>
+				<div id="messageHeader">
+					<h1 id="headerTitle"></h1>
+					<h3 id="headerLevel"></h3>
+					<p id="bannerMessage"></p>
+
+					<?xml version="1.0" encoding="utf-8"?>
+					<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 505 110" style="enable-background:new 0 0 505 110;" xml:space="preserve">
+					<g id="Layer_2">
+						<g id="Layer_1-2">
+							<path class="st0" d="M197.4,11.6H495c5.5,0,10,4.5,10,10V68c0,5.5-4.5,10-10,10H197.4c-5.5,0-10-4.5-10-10V21.6
+								C187.4,16.1,191.8,11.6,197.4,11.6z"/>
+							<path class="st1" d="M182.4,14.6H491c5.5,0,10,4.5,10,10V64c0,5.5-4.5,10-10,10H182.4c-5.5,0-10-4.5-10-10V24.6
+								C172.4,19.1,176.8,14.6,182.4,14.6z"/>
+							<path class="st2" d="M183.3,110L97.3,94.2L10.7,110C4.8,110,0,104.9,0,98.7V11.3C0,5.1,4.8,0,10.7,0h172.5
+								c5.9,0,10.7,5.1,10.7,11.3v87.4C194,104.9,189.2,110,183.3,110z"/>
+							<path class="st3" d="M177,103L97,89l-80.6,14c-5.5,0-10-4.5-10-10V15.6c0-5.5,4.5-10,10-10H177c5.5,0,10,4.5,10,10l0,0V93
+								C187,98.5,182.5,103,177,103z"/>
+						</g>
+					</g>
+					</svg>
+
+
+				</div>
+				<div id="thePlayers">
+					<ul>
+						<li ng-repeat="p in players track by $index">{{ p }}</li>
+					</ul>
+				</div>
+			</header>
+			<div id="content">
+			  <div id="cardSlots"></div>
+			<div id="moreSlots"></div>
+			  <div id="outerCard">
+
+				  <div id="cardPile"></div>
+				  <button id="checkButton"><img src="../images/assets/check.png" id="checkImage" alt="Check">Check Answers</button>
+			  </div>
+			  <div id="success">
+					<div id="successMessage">
+						<div id="successTop"></div>
+				    <h1 id="level">Level 1 Complete</h1>
+						<h2 id="successDes">Let’s go onto the next level.</h2>
+				    <!-- <a href=""> -->
+					<button id="playAgainButton" onclick="init()">Next Level<img src="../images/assets/modelRightArrow.png" id="rightArrow" alt="Right Arrow"></button>
+				<!-- </a> -->
+
+						<a href=""><button id="quitGameButton"><?xml version="1.0" encoding="utf-8"?>
+							<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 25.4 25.4" style="width: 30px;  margin-top: 4px;" xml:space="preserve">
+							<g id="Layer_2">
+								<g id="Layer_1-2">
+									<path class="st7" d="M1.2,2.1l0.9-0.9c1.6-1.6,4.2-1.6,5.8,0l16.3,16.3c1.6,1.6,1.6,4.2,0,5.8l-0.9,0.9c-1.6,1.6-4.2,1.6-5.8,0
+										L1.2,7.9C-0.4,6.3-0.4,3.7,1.2,2.1z"/>
+									<path class="st7" d="M1.2,17.5L17.5,1.2c1.6-1.6,4.2-1.6,5.8,0l0.9,0.9c1.6,1.6,1.6,4.2,0,5.8L7.9,24.2c-1.6,1.6-4.2,1.6-5.8,0
+										l-0.9-0.9C-0.4,21.7-0.4,19.1,1.2,17.5z"/>
+								</g>
+							</g>
+							</svg>
+							<p>Quit Game</p></button></a>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="topFooter"></div>
+				<div class="bottomFooter">
+					<p>&copy; 2017 MimicMe</p>
+				</div>
+			</footer>
+
+
+
+	</div>
+	<footer>
+		<div id="homeFooter">
+			<div class="topFooter"></div>
+			<div class="bottomFooter">
+				<p>&copy; 2017 MimicMe</p>
+			</div>
+		</div>
+	</footer>
+	<script src="pictures.js"></script>
+	<script src="lists.js"></script>
+	<script src="matchingGame.js"></script>
+
+	<script src="multiPlayer.js"></script>
+	</body>
+</html>
