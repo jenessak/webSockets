@@ -118,7 +118,7 @@ angular.module('mimicMe').service('SockService', [function () {
 
 
   function onopen (name) {
-    var socket = new WebSocket('ws://localhost:8080');
+    var socket = new WebSocket('ws:https://mimicme2.herokuapp.com/');
     socket.onopen = function () {
       var obj = {};
       obj.action = "introduce";
