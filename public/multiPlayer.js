@@ -94,9 +94,8 @@ cancelButton.onclick = function (event) {
 var multiGo = document.getElementById('nameGoButton');
 multiGo.onclick = function (event) {
   // sendPlayer();
-  startMultiGame();
-  var name = document.getElementById('nameInput').value;
-  console.log(name);
+  // var name = document.getElementById('nameInput').value;
+  // console.log(name);
 };
 
 
@@ -105,6 +104,10 @@ startMultiGame = function () {
   $("#topbar").hide();
   $('#nameModel').hide();
   $("#homeFooter").hide();
+  $('#PlayAgainButton').hide();
+  $('#multiPlayAgainButton').show();
+
+
 
   document.getElementById("spaceSubject").style.display = "none";
   document.getElementById("schoolSubject").style.display = "none";
@@ -136,4 +139,18 @@ startMultiGame = function () {
     };
   }
   init();
+
 };
+
+// theEnd = function (name) {
+//   document.getElementById('level').innerHTML = name +" Won!";
+//   document.getElementById('quitGameButton').innerHTML = "Done";
+//   document.getElementById('quitGameButton').style.margin = "60px 0 0 -73px";
+//   document.getElementById('playAgainButton').style.display = "none";
+//   // document.getElementById('successDes').innerHTML = "SHOW THE PEOPLES NAMES";
+//   $('#success').show();
+// }
+
+
+
+//FINISHED game

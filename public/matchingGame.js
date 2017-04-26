@@ -9,7 +9,10 @@ var spotsFilled = 0;
 $('#success').hide();
 $("#checkButton").hide();
 document.getElementById("animalNav").style.borderBottom = "solid white 3px";
-$('#nameModel').hide();
+// $('#nameModel').hide();
+$('#multiPlayAgainButton').hide();
+
+// $('#MulticheckButton').hide();
 // $("#topbar").hide();
 var topic = '';
 
@@ -78,7 +81,7 @@ function whichTopic(theme){
 var animalsLink = document.getElementById("animalsStartGame");
 animalsLink.onclick = function (event) {
   event.preventDefault();
-  $("#thePlayers").hide();
+  // $("#thePlayers").hide();
 
   whichTopic('animals');
   document.getElementById("theGame").style.display = "block";
@@ -118,7 +121,7 @@ animalsLink.onclick = function (event) {
 var schoolLink = document.getElementById("schoolStartGame");
 schoolLink.onclick = function (event) {
   event.preventDefault();
-  $("#thePlayers").hide();
+  // $("#thePlayers").hide();
 
   whichTopic('school');
   document.getElementById("theGame").style.display = "block";
@@ -156,7 +159,7 @@ schoolLink.onclick = function (event) {
 var spaceLink = document.getElementById("spaceStartGame");
 spaceLink.onclick = function (event) {
   event.preventDefault();
-  $("#thePlayers").hide();
+  // $("#thePlayers").hide();
 
   whichTopic('space');
   document.getElementById("theGame").style.display = "block";
@@ -195,8 +198,8 @@ spaceLink.onclick = function (event) {
 var foodLink = document.getElementById("foodStartGame");
 foodLink.onclick = function (event) {
   event.preventDefault();
-  $("#thePlayers").hide();
-  
+  // $("#thePlayers").hide();
+
   whichTopic('food');
   document.getElementById("theGame").style.display = "block";
   document.getElementById("foodSubject").style.display = "none";
@@ -582,12 +585,13 @@ function handleCardDrop(event, ui) {
         order.shift();
       }
       if (pictures.length == 0 ) {
-        document.getElementById('level').innerHTML = "You Finished the Game!";
+        // document.getElementById('level').innerHTML = "You Finished the Game!";
         document.getElementById('quitGameButton').innerHTML = "Done";
         document.getElementById('quitGameButton').style.margin = "60px 0 0 -73px";
         document.getElementById('playAgainButton').style.display = "none";
         document.getElementById('successDes').innerHTML = "Click the done button and choose a new topic.";
 
+        //
         // document.getElementById('playAgainButton').innerHTML = "Start Over";
         // document.getElementById('playAgainButton').onclick = function (){
         //   startOver();

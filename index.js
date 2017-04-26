@@ -25,8 +25,14 @@ var broadcast = function (player) {
   });
 };
 // var gameNumber = 1;
-// var games = [];
+var games = [];
+// var playersAnimals = [];
+// var playersFood = [];
+// var playersSchool = [];
+// var playersSpace = [];
 var players = [];
+// var winner = [];
+var numberOfPlayers = 2
 
 // var currenctGameOpen = function () {
 //
@@ -37,19 +43,58 @@ wss.on('connection', function (ws) {
   console.log("Client connected.");
 
   ws.on('message', function (name) {
-    console.log("Received player from client:", name);
+
     var obj = JSON.parse(name);
+    console.log("Received player from client:", obj.name);
     if (obj.action === "introduce") {
-      var players = {}
-      players.info = obj;
-      players.conn = ws;
-      players.push(name);
+      var player = {};
+      player.info = obj.name;
+      // player.topic = obj.topic;
+      player.level = 0;
+      player.conn = ws;
+      var responseObj = {};
+      players.push(player);
+
+      if (players.length === numberOfPlayers) {
+        games.push(players);
+        responseObj.action = "startGame";
+
+
+        broadcast(JSON.stringify(responseObj));
+
+      } else {
+        responseObj.action = "wait";
+        ws.send(JSON.stringify(responseObj));
+      }
+
+
+
+    // } else if (obj.action === "levelWon") {
+    //
+  } else if (obj.action === "increase level") {
+    for (var i = 0; i < games.length; i++) {
+      if (obj.name === games[i].name) {
+        games[i].level += 1;
+        if (games[i].level === 1) {
+          responseObj.action = "endGame";
+          responseObj.winner = game[i].name;
+          broadcast(JSON.stringify(responseObj));
+        } else {
+          responseObj.action = "nextLevel";
+          ws.send(JSON.stringify(responseObj));
+        }
+      }
     }
-    broadcast(name);
+
+
+
+  }
+
   });
 
   ws.on('close', function () {
     // THIS CODE RUNS WHEN THIS CONNECTION IS CLOSED
+    players = [];
     console.log("Client disconnected.");
   });
 });

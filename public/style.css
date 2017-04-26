@@ -240,9 +240,9 @@ h1, h2, h3, h4 {
   z-index: 100;
 }
 
-#checkButton {
+#checkButton, #multicheckButton {
   margin-right: 12%; /*215px*/
-  margin-top: 96px;
+  margin-top: 124px;
   /*93px;*/
   float: right;
   width: 198px;
@@ -256,7 +256,7 @@ h1, h2, h3, h4 {
   color: white;
 }
 
-#checkButton:hover {
+#checkButton:hover, #multicheckButton:hover {
   background-color: #466CB5;
   /*f7b487;*/
   /*#971c36;*/
@@ -466,7 +466,7 @@ button:focus {
     margin-left: -20px;
   }
 
-  #nameModel {
+  #nameModel, #waitModel {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
@@ -477,8 +477,51 @@ button:focus {
     text-align: center;
   }
 
-  #thePlayers ul {
+#thePlayers {
+  float: right;
+}
+
+  #thePlayers table {
     color: #fff;
     float: right;
     list-style-type: none;
+    width: 655px;
+    padding: 0px 0 0 5px;
+    margin: 0px;
+    /*border: 1px double;*/
   }
+
+  /*#thePlayers  {
+
+  }*/
+
+#thePlayers img {
+  width: 32px;
+  height: 26px;
+  border: 0px;
+  /*padding-left: 130px;*/
+  /*float: left;*/
+}
+
+#thePlayers tr {
+  color: #fff;
+  width: 10px;
+  /*padding: 0px;*/
+  /*float: left;*/
+}
+#thePlayers tr {
+  margin: 0px;
+  height: 5px;
+  padding: 0px;
+  line-height: 5px;
+  /*float: left;*/
+}
+
+#thePlayers td {
+  max-width: 20px;
+  /*border-left: thick solid #fff;*/
+}
+
+#level8 {
+
+}

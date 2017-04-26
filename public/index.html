@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-	<head ng-app="mimicMe">
+<html lang="en" ng-app="mimicMe">
+	<head>
 		<title>Matching Game</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -10,8 +10,7 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-		
-		<script src="app.js"></script>
+
 		<link rel="shortcut icon" href="../images/assets/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="../images/assets/favicon.ico" type="image/x-icon">
 		<meta name="google" value="notranslate">
@@ -1369,25 +1368,25 @@
 		<table id="multiGameTable">
 			<tr>
 				<td>
-					<div id="animalsMultiStartGame"><a href="game.html">Animal Game</a></div>
+					<div id="animalsMultiStartGame" ng-click="clickGameButton('animals')"><a >Animal Game</a></div>
 				</td>
 				<td>
-					<div id="foodMultiStartGame"><a href="game.html">Food Game</a></div>
+					<div id="foodMultiStartGame" ng-click="clickGameButton('food')"><a href="game.html">Food Game</a></div>
 				</td>
 				<td>
-					<div id="schoolMultiStartGame"><a href="game.html">School Game</a></div>
+					<div id="schoolMultiStartGame" ng-click="clickGameButton('school')"><a href="game.html">School Game</a></div>
 				</td>
 				<td>
-					<div id="spaceMultiStartGame"><a href="game.html">Science Game</a></div>
+					<div id="spaceMultiStartGame" ng-click="clickGameButton('space')"><a href="game.html">Science Game</a></div>
 				</td>
 			</tr>
 		</table>
 	</div>
 
-	<div id="nameModel">
+	<div id="nameModel" ng-show="nameModelVisible">
 				<div id="nameMessage">
 					<div id="nameTop"></div>
-			    <h1 id="nameHeader">{{ test }}</h1>
+			    <h1 id="nameHeader">Enter Name</h1>
 					<h2 id="successDes">This is the name your opponents will see.</h2>
 
 					<input id="nameInput" type="text" ng-model="name">
@@ -1409,6 +1408,18 @@
 						</g>
 						</svg>
 						<p>Cancel</p></button></a>
+				</div>
+
+	</div>
+
+	<div id="waitModel"
+			ng-show="waitModelVisible"
+			>
+				<div id="nameMessage">
+					<div id="nameTop"></div>
+			    <h1 id="nameHeader">Please Wait</h1>
+					<h2 id="successDes">We are waiting on some of the players.</h2>
+
 				</div>
 
 	</div>
@@ -1460,11 +1471,53 @@
 
 
 				</div>
-				<div id="thePlayers">
-					<ul>
-						<li ng-repeat="p in players track by $index">{{ p }}</li>
-					</ul>
-				</div>
+				<!-- <div id="thePlayers">
+					<table>
+						<tr>
+							<td ng-repeat="p in players track by $index">{{ p }}</td>
+
+
+						</tr> -->
+
+						<!-- <td>
+							<p id="p1"></p>
+						</td>
+						<td> <img src={{ p.color }} alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td class="level8"><img src="" alt=""></td>
+					</tr>
+					<tr>
+						<td>
+							<p id="p2"></p>
+						</td>
+						<td> <img src="../images/birds/strawberry.png" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td class="level8"><img src="" alt=""></td>
+					</tr>
+						<tr>
+						<td>
+							<p id="p3"></p>
+						</td>
+						<td> <img src="../images/birds/o.png" alt=""></td>
+						<td><img src="../images/birds/o.png" alt=""></td>
+						<td><img src="../images/birds/o.png" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td><img src="" alt=""></td>
+						<td class="level8"><img src="" alt=""></td> -->
+					<!-- </table> -->
+				<!-- </div> -->
 			</header>
 			<div id="content">
 			  <div id="cardSlots"></div>
@@ -1473,7 +1526,9 @@
 
 				  <div id="cardPile"></div>
 				  <button id="checkButton"><img src="../images/assets/check.png" id="checkImage" alt="Check">Check Answers</button>
-			  </div>
+					<!-- <button id="multicheckButton"><img src="../images/assets/check.png" id="checkImage" alt="Check" ng-click="">Check Answers</button> -->
+
+				</div>
 			  <div id="success">
 					<div id="successMessage">
 						<div id="successTop"></div>
@@ -1481,6 +1536,8 @@
 						<h2 id="successDes">Let’s go onto the next level.</h2>
 				    <!-- <a href=""> -->
 					<button id="playAgainButton" onclick="init()">Next Level<img src="../images/assets/modelRightArrow.png" id="rightArrow" alt="Right Arrow"></button>
+					<!-- <button id="multiPlayAgainButton" ng-click="multiPlayAgainButton()">Next Level<img src="../images/assets/modelRightArrow.png" id="rightArrow" alt="Right Arrow"></button> -->
+
 				<!-- </a> -->
 
 						<a href=""><button id="quitGameButton"><?xml version="1.0" encoding="utf-8"?>
@@ -1521,7 +1578,7 @@
 	<script src="pictures.js"></script>
 	<script src="lists.js"></script>
 	<script src="matchingGame.js"></script>
-
 	<script src="multiPlayer.js"></script>
+	<script src="app.js"></script>
 	</body>
 </html>
